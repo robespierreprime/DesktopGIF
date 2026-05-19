@@ -1,2 +1,2 @@
 # DesktopGIF
-MacOS to play GIF on desktop
+MacOS App to play GIF on desktop
