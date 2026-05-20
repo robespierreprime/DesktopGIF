@@ -1,4 +1,4 @@
-# Release v1.0.0 — Desktop GIF
+# Release v2.3.0 — Desktop GIF
 
 > **First public release.**
 
@@ -58,6 +58,7 @@
 
 - GIFs with hundreds of frames and very high resolutions consume significant RAM while visible (frames are held decoded in memory for smooth playback). Hidden GIFs use zero memory.
 - No support for WebP or APNG in this release.
+- Drag may not respond after switching Space or unlocking → workaround: “Reset window” button
 
 ---
 
