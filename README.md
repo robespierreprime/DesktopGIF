@@ -4,7 +4,7 @@
 
 ![macOS](https://img.shields.io/badge/macOS-14%2B-blue?logo=apple)
 ![Swift](https://img.shields.io/badge/Swift-5.9%2B-orange?logo=swift)
-![License](https://img.shields.io/badge/license-MIT-green)
+![License](https://img.shields.io/badge/license-GPL--v2-green)
 ![Dependencies](https://img.shields.io/badge/dependencies-none-brightgreen)
 
 ---
