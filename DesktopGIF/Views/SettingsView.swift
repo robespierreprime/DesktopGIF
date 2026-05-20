@@ -762,7 +762,7 @@ private struct CreditsTab: View {
 
                 // ── App identity ──────────────────────────────────────────
                 VStack(spacing: 6) {
-                    Image(systemName: "play.rectangle.fill")
+                    Image(systemName: "paintbrush.fill")
                         .font(.system(size: 48))
                         .foregroundStyle(.tint)
 
@@ -778,7 +778,7 @@ private struct CreditsTab: View {
                         .foregroundStyle(.secondary)
 
                     Link("View source on GitHub",
-                         destination: URL(string: "https://github.com")!)
+                         destination: URL(string: "https://github.com/robespierreprime/DesktopGIF")!)
                         .font(.callout)
                 }
 
@@ -809,7 +809,7 @@ private struct CreditsTab: View {
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
 
-                    Text("MIT License")
+                    Text("GPL v2.0 License")
                         .font(.callout.bold())
 
                     Text("Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software.")
