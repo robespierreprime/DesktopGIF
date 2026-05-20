@@ -101,8 +101,4 @@ DesktopGIF/
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
-
----
-
-*Made with ★ by Gigi*
+GPL-v2 — see [LICENSE](LICENSE)
