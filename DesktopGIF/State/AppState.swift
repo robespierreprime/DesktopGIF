@@ -92,6 +92,15 @@ final class AppState: ObservableObject {
         group.gifIDs.forEach { id in
             guard let idx = gifs.firstIndex(where: { $0.id == id }) else { return }
             gifs[idx].isVisible = visible
+            // Bug fix: when showing via schedule, honour screen pinning.
+            // If the pinned screen is disconnected, store the intent (isVisible = true)
+            // but don't actually show the window — applyScreenAvailability will
+            // surface it again once the screen reconnects.
+            if visible, gifs[idx].screenID != 0,
+               nsScreen(for: gifs[idx].screenID) == nil {
+                // Screen absent: keep window hidden until it reconnects.
+                return
+            }
             windowManager.updateVisibility(for: id, visible: visible)
         }
     }

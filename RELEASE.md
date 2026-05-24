@@ -1,6 +1,16 @@
-# Release v2.3.0 — Desktop GIF
+# Release v2.3.1 — Desktop GIF
 
-> **First public release.**
+> **Patch release — bug fixes.**
+
+---
+
+## Bug fixes & improvements
+
+### Schedule now respects screen pinning
+A scheduled group could previously make GIFs appear on screen even when their pinned display was disconnected. The schedule now checks display availability before showing any window — the intent is preserved in state, so GIFs surface automatically once the screen reconnects.
+
+### Resize handle hidden while locked
+The resize handle drawn in the bottom-right corner of each GIF is no longer visible when the GIF is locked. It reappears immediately on unlock or after "Reset window". The handle is also correctly hidden for GIFs that start in a locked state at launch.
 
 ---
 

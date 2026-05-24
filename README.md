@@ -13,10 +13,10 @@
 
 - **Desktop-level windows** — GIFs render below all apps, pinned to the wallpaper layer.
 - **Drag & resize** — move and resize any GIF directly on the desktop. A resize handle sits in the bottom-right corner.
-- **Lock / hide** — lock a GIF in place to prevent accidental moves, or hide it without removing it.
+- **Lock / hide** — lock a GIF in place to prevent accidental moves (the resize handle disappears while locked and reappears on unlock), or hide it without removing it.
 - **Screen pinning** — pin a GIF to a specific display. It auto-hides when that display is disconnected and reappears when it reconnects.
 - **Groups** — organise GIFs into named groups with shared visibility, lock state, screen pinning, and scheduled time ranges.
-- **Scheduled visibility** — define a daily time range (supports midnight-crossing) during which a group is shown automatically.
+- **Scheduled visibility** — define a daily time range (supports midnight-crossing) during which a group is shown automatically. Screen pinning is respected — a scheduled group will not appear on a disconnected display.
 - **Playback speed** — per-GIF speed multiplier from 0.25× to 4×, adjusted live without reloading frames.
 - **Duplicate handling** — importing the same file twice auto-suffixes the display name (- 2, - 3…).
 - **Minimal menu bar** — lives in the menu bar (`LSUIElement`), no Dock icon.

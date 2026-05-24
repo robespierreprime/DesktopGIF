@@ -78,7 +78,7 @@ final class DesktopWindowManager {
 
     func resetWindow(for id: UUID) {
         guard let controller = controllers[id] else { return }
-        controller.setLocked(false)
+        controller.setLocked(false)   // unlocks + restores resize handle
         controller.window?.orderOut(nil)
         controller.resumeRendering()
         controller.window?.orderFront(nil)

@@ -59,6 +59,11 @@ final class DraggableContainerView: NSView {
     var onResizeEnded: (() -> Void)?
     var contextMenuProvider: (() -> NSMenu?)?
 
+    /// Controls whether the resize handle is drawn. Mirrors the window lock state.
+    var isLocked: Bool = false {
+        didSet { needsDisplay = true }
+    }
+
     private enum InteractionMode { case none, dragging, resizing }
     private var mode: InteractionMode = .none
     private let handleSize: CGFloat = 16
@@ -110,6 +115,7 @@ final class DraggableContainerView: NSView {
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
+        guard !isLocked else { return }   // hide handle when locked
         guard let ctx = NSGraphicsContext.current?.cgContext else { return }
         ctx.setStrokeColor(NSColor.white.withAlphaComponent(0.5).cgColor)
         ctx.setLineWidth(1.5)
@@ -187,6 +193,9 @@ final class GIFWindowController: NSWindowController {
 
         self.containerView = container
         self.gifImageView  = gifView
+
+        // Sync initial lock state so the handle is hidden if the GIF starts locked.
+        container.isLocked = item.isLocked
 
         container.contextMenuProvider = { [weak self] in self?.contextMenuBuilder?() }
 
@@ -285,6 +294,7 @@ final class GIFWindowController: NSWindowController {
 
     func setLocked(_ locked: Bool) {
         if !locked { containerView?.cancelInteraction() }
+        containerView?.isLocked = locked
         window?.ignoresMouseEvents = locked
     }
 
